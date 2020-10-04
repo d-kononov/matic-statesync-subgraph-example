@@ -1,0 +1,19 @@
+{
+  "name": "matic-state-syncs",
+  "version": "0.1.0",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy jdkanani/matic-state-syncs --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "create-local": "graph create jdkanani/matic-state-syncs --node http://127.0.0.1:8020",
+    "remove-local": "graph remove jdkanani/matic-state-syncs --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy jdkanani/matic-state-syncs --ipfs https://ipfs.infura.io:5001 --node http://127.0.0.1:8020"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "0.18.0",
+    "@graphprotocol/graph-ts": "0.18.0"
+  },
+  "dependencies": {
+    "semver": "^7.3.2"
+  }
+}

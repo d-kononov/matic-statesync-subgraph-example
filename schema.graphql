@@ -1,0 +1,9 @@
+type LastStateSync @entity {
+  id: ID!
+  stateId: BigInt!
+}
+
+type User @entity {
+  id: ID!
+  amount: BigInt
+}

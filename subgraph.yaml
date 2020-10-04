@@ -1,0 +1,28 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ChildERC20
+    network: mumbai
+    source:
+      abi: ChildERC20
+      address: '0xe6b8a5CF854791412c1f6EFC7CAf629f5Df1c747'
+      startBlock: 5059900
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappings/child-erc20.ts
+      entities:
+        - User
+      abis:
+        - name: ChildERC20
+          file: ./abis/ChildERC20.json
+        - name: StateReceiver
+          file: ./abis/StateReceiver.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      blockHandlers:
+        - handler: handleBlock
